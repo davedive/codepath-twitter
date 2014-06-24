@@ -21,4 +21,4 @@ Features
 
 Walkthrough
 ------------
-![Video Walkthrough](.gif)
+![Video Walkthrough](twitter-walkthrough-7.gif)
