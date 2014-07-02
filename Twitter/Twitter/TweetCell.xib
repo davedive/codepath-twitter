@@ -16,6 +16,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vhr-Fd-tVt">
                         <rect key="frame" x="15" y="16" width="53" height="51"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="height" constant="51" id="0mY-Jh-5Zd"/>
                             <constraint firstAttribute="width" constant="53" id="499-hg-nh9"/>

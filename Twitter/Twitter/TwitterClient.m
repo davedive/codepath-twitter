@@ -27,7 +27,26 @@ NSString* twitterAPIURL = @"https://api.twitter.com";
 
 - (void)getTimelineWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
+    [self GET:@"1.1/statuses/mentions_timeline.json" parameters:nil success:success failure:failure];
+}
+
+- (void)getMentionsWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
     [self GET:@"1.1/statuses/home_timeline.json" parameters:nil success:success failure:failure];
+}
+
+- (void)getUserFeedWithSuccess:(NSString*)screenName success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    NSMutableDictionary* parameters = [[NSMutableDictionary alloc] init];
+    [parameters setValue:screenName forKey:@"screen_name"];
+    [self GET:@"1.1/statuses/user_timeline.json" parameters:parameters success:success failure:failure];
+}
+
+- (void)getUserWithSuccess:(NSString*)screenName success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    NSMutableDictionary* parameters = [[NSMutableDictionary alloc] init];
+    [parameters setValue:screenName forKey:@"screen_name"];
+    [self GET:@"1.1/users/show.json" parameters:parameters success:success failure:failure];
 }
 
 - (void)getAccountWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure

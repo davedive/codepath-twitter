@@ -14,7 +14,12 @@
     return @{
              @"name": @"name",
              @"username": @"screen_name",
-             @"profileImageURL": @"profile_image_url"
+             @"profileImageURL": @"profile_image_url",
+             @"backgroundImageURL":@"profile_background_image_url",
+             @"description":@"description",
+             @"tweetCount":@"statuses_count",
+             @"followingCount":@"friends_count",
+             @"followerCount":@"followers_count"
              };
 }
 
@@ -23,6 +28,11 @@
     [encoder encodeObject:self.name forKey:@"name"];
     [encoder encodeObject:self.username forKey:@"username"];
     [encoder encodeObject:self.profileImageURL forKey:@"profileImageURL"];
+    [encoder encodeObject:self.backgroundImageURL forKey:@"backgroundImageURL"];
+    [encoder encodeObject:self.description forKey:@"description"];
+    [encoder encodeObject:self.tweetCount forKey:@"tweetCount"];
+    [encoder encodeObject:self.followingCount forKey:@"followingCount"];
+    [encoder encodeObject:self.followerCount forKey:@"followerCount"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
@@ -31,6 +41,11 @@
         self.name = [decoder decodeObjectForKey:@"name"];
         self.username = [decoder decodeObjectForKey:@"username"];
         self.profileImageURL = [decoder decodeObjectForKey:@"profileImageURL"];
+        self.backgroundImageURL = [decoder decodeObjectForKey:@"backgroundImageURL"];
+        self.description = [decoder decodeObjectForKey:@"description"];
+        self.tweetCount = [decoder decodeObjectForKey:@"description"];
+        self.followingCount = [decoder decodeObjectForKey:@"followingCount"];
+        self.followerCount = [decoder decodeObjectForKey:@"followerCount"];
     }
     return self;
 }

@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4C1F680449664580ACC13618 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE05A12B79144EDAB6618EE /* libPods.a */; };
+		871B254319623CE600A33878 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871B254119623CE600A33878 /* ProfileViewController.m */; };
+		871B254419623CE600A33878 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871B254219623CE600A33878 /* ProfileViewController.xib */; };
+		8739A98519628A0C00C9A470 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739A98319628A0C00C9A470 /* MenuViewController.m */; };
+		8739A98619628A0C00C9A470 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8739A98419628A0C00C9A470 /* MenuViewController.xib */; };
+		8739A98A19638EA900C9A470 /* ProfileHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739A98819638EA900C9A470 /* ProfileHeaderCell.m */; };
+		8739A98B19638EA900C9A470 /* ProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8739A98919638EA900C9A470 /* ProfileHeaderCell.xib */; };
+		8739A98F19638EBE00C9A470 /* ProfileStatsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739A98D19638EBE00C9A470 /* ProfileStatsCell.m */; };
+		8739A99019638EBE00C9A470 /* ProfileStatsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8739A98E19638EBE00C9A470 /* ProfileStatsCell.xib */; };
+		8739A993196396A300C9A470 /* UIView+SuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739A992196396A300C9A470 /* UIView+SuperView.m */; };
 		8780E5101953CA6000E86AFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8780E50F1953CA6000E86AFF /* Foundation.framework */; };
 		8780E5121953CA6000E86AFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8780E5111953CA6000E86AFF /* CoreGraphics.framework */; };
 		8780E5141953CA6000E86AFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8780E5131953CA6000E86AFF /* UIKit.framework */; };
@@ -46,6 +55,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		871B254019623CE600A33878 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		871B254119623CE600A33878 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		871B254219623CE600A33878 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		8739A98219628A0C00C9A470 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		8739A98319628A0C00C9A470 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		8739A98419628A0C00C9A470 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		8739A98719638EA900C9A470 /* ProfileHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderCell.h; sourceTree = "<group>"; };
+		8739A98819638EA900C9A470 /* ProfileHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderCell.m; sourceTree = "<group>"; };
+		8739A98919638EA900C9A470 /* ProfileHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderCell.xib; sourceTree = "<group>"; };
+		8739A98C19638EBE00C9A470 /* ProfileStatsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileStatsCell.h; sourceTree = "<group>"; };
+		8739A98D19638EBE00C9A470 /* ProfileStatsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileStatsCell.m; sourceTree = "<group>"; };
+		8739A98E19638EBE00C9A470 /* ProfileStatsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileStatsCell.xib; sourceTree = "<group>"; };
+		8739A991196396A300C9A470 /* UIView+SuperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SuperView.h"; sourceTree = "<group>"; };
+		8739A992196396A300C9A470 /* UIView+SuperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SuperView.m"; sourceTree = "<group>"; };
 		8780E50C1953CA6000E86AFF /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8780E50F1953CA6000E86AFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8780E5111953CA6000E86AFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -206,6 +229,14 @@
 				8780E5571953CDC900E86AFF /* TweetCell.h */,
 				8780E5581953CDC900E86AFF /* TweetCell.m */,
 				8780E5591953CDC900E86AFF /* TweetCell.xib */,
+				8739A98719638EA900C9A470 /* ProfileHeaderCell.h */,
+				8739A98819638EA900C9A470 /* ProfileHeaderCell.m */,
+				8739A98919638EA900C9A470 /* ProfileHeaderCell.xib */,
+				8739A98C19638EBE00C9A470 /* ProfileStatsCell.h */,
+				8739A98D19638EBE00C9A470 /* ProfileStatsCell.m */,
+				8739A98E19638EBE00C9A470 /* ProfileStatsCell.xib */,
+				8739A991196396A300C9A470 /* UIView+SuperView.h */,
+				8739A992196396A300C9A470 /* UIView+SuperView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -225,6 +256,12 @@
 				8780E5521953CD5800E86AFF /* ComposeViewController.h */,
 				8780E5531953CD5800E86AFF /* ComposeViewController.m */,
 				8780E5541953CD5800E86AFF /* ComposeViewController.xib */,
+				871B254019623CE600A33878 /* ProfileViewController.h */,
+				871B254119623CE600A33878 /* ProfileViewController.m */,
+				871B254219623CE600A33878 /* ProfileViewController.xib */,
+				8739A98219628A0C00C9A470 /* MenuViewController.h */,
+				8739A98319628A0C00C9A470 /* MenuViewController.m */,
+				8739A98419628A0C00C9A470 /* MenuViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -317,10 +354,14 @@
 			files = (
 				8780E51A1953CA6000E86AFF /* InfoPlist.strings in Resources */,
 				8780E5561953CD5800E86AFF /* ComposeViewController.xib in Resources */,
+				8739A99019638EBE00C9A470 /* ProfileStatsCell.xib in Resources */,
+				871B254419623CE600A33878 /* ProfileViewController.xib in Resources */,
 				8780E54C1953CD1F00E86AFF /* TimelineViewController.xib in Resources */,
+				8739A98619628A0C00C9A470 /* MenuViewController.xib in Resources */,
 				8780E55B1953CDC900E86AFF /* TweetCell.xib in Resources */,
 				8780E5221953CA6000E86AFF /* Images.xcassets in Resources */,
 				8780E5511953CD4900E86AFF /* TweetViewController.xib in Resources */,
+				8739A98B19638EA900C9A470 /* ProfileHeaderCell.xib in Resources */,
 				8780E5461953CCFF00E86AFF /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,12 +417,17 @@
 				8780E5201953CA6000E86AFF /* AppDelegate.m in Sources */,
 				8780E5611953CE2900E86AFF /* TwitterClient.m in Sources */,
 				8780E54B1953CD1F00E86AFF /* TimelineViewController.m in Sources */,
+				8739A993196396A300C9A470 /* UIView+SuperView.m in Sources */,
 				8780E51C1953CA6000E86AFF /* main.m in Sources */,
 				8780E55E1953CDFA00E86AFF /* Tweet.m in Sources */,
+				8739A98F19638EBE00C9A470 /* ProfileStatsCell.m in Sources */,
 				8780E5551953CD5800E86AFF /* ComposeViewController.m in Sources */,
 				8780E5451953CCFF00E86AFF /* LoginViewController.m in Sources */,
+				8739A98519628A0C00C9A470 /* MenuViewController.m in Sources */,
 				8780E5501953CD4900E86AFF /* TweetViewController.m in Sources */,
+				871B254319623CE600A33878 /* ProfileViewController.m in Sources */,
 				8780E56419588B2500E86AFF /* UserInfo.m in Sources */,
+				8739A98A19638EA900C9A470 /* ProfileHeaderCell.m in Sources */,
 				8780E55A1953CDC900E86AFF /* TweetCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

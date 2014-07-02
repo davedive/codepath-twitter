@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "TimelineViewController.h"
+#import "MenuViewController.h"
 #import "TwitterClient.h"
 #import "Mantle.h"
 
@@ -43,21 +44,21 @@
     if (accessToken == nil)
     {
         LoginViewController *loginVC = [[LoginViewController alloc] init];
-        UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:loginVC];
-        nvc.navigationBar.translucent = NO;
-        nvc.navigationBar.barTintColor = [[UIColor alloc]initWithRed:nRed green:nGreen blue:nBlue alpha:0.0];
-        nvc.navigationBar.tintColor = [UIColor whiteColor];
-        self.window.rootViewController = nvc;
+//        UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:loginVC];
+//        nvc.navigationBar.translucent = NO;
+//        nvc.navigationBar.barTintColor = [[UIColor alloc]initWithRed:nRed green:nGreen blue:nBlue alpha:0.0];
+//        nvc.navigationBar.tintColor = [UIColor whiteColor];
+        self.window.rootViewController = loginVC;
     } else
     {
         //Load user state from previous session
         [[TwitterClient getInstance].requestSerializer saveAccessToken:accessToken];
-        TimelineViewController *timelineVC = [[TimelineViewController alloc] init];
-        UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:timelineVC];
-        nvc.navigationBar.translucent = NO;
-        nvc.navigationBar.barTintColor = [[UIColor alloc]initWithRed:nRed green:nGreen blue:nBlue alpha:0.0];
-        nvc.navigationBar.tintColor = [UIColor whiteColor];
-        self.window.rootViewController = nvc;
+        MenuViewController *menuVC = [[MenuViewController alloc] init];
+//        UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:menuVC];
+//        nvc.navigationBar.translucent = NO;
+//        nvc.navigationBar.barTintColor = [[UIColor alloc]initWithRed:nRed green:nGreen blue:nBlue alpha:0.0];
+//        nvc.navigationBar.tintColor = [UIColor whiteColor];
+        self.window.rootViewController = menuVC;
     }
     
     self.window.backgroundColor = [UIColor whiteColor];
@@ -119,16 +120,16 @@
                                                             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                                               NSLog(@"failed to get timeline!");
                                                             }];
-                                                          
-                                                          CGFloat nRed=0.0/255.0;
-                                                          CGFloat nGreen=172.0/255.0;
-                                                          CGFloat nBlue=237.0/255.0;
-                                                          TimelineViewController *timelineVC = [[TimelineViewController alloc] init];
-                                                          UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:timelineVC];
-                                                          nvc.navigationBar.translucent = NO;
-                                                          nvc.navigationBar.barTintColor = [[UIColor alloc]initWithRed:nRed green:nGreen blue:nBlue alpha:0.0];
-                                                          nvc.navigationBar.tintColor = [UIColor whiteColor];
-                                                          self.window.rootViewController = nvc;
+//                                                          
+//                                                          CGFloat nRed=0.0/255.0;
+//                                                          CGFloat nGreen=172.0/255.0;
+//                                                          CGFloat nBlue=237.0/255.0;
+                                                          MenuViewController *menuVC = [[MenuViewController alloc] init];
+//                                                          UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:timelineVC];
+//                                                          nvc.navigationBar.translucent = NO;
+//                                                          nvc.navigationBar.barTintColor = [[UIColor alloc]initWithRed:nRed green:nGreen blue:nBlue alpha:0.0];
+//                                                          nvc.navigationBar.tintColor = [UIColor whiteColor];
+                                                          self.window.rootViewController = menuVC;
                                                       }
                                                       failure:^(NSError *error) {
                                                           NSLog(@"Error getting access token!");

@@ -9,6 +9,9 @@
 
 #import "TweetCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "TwitterClient.h"
+#import "UserInfo.h"
+#import "ProfileViewController.h"
 
 @implementation TweetCell
 
@@ -40,5 +43,6 @@
     self.profileImageView.layer.cornerRadius = 5;
     self.profileImageView.clipsToBounds = YES;
 }
+
 
 @end

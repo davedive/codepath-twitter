@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    mentionsMode,
+    homeMode
+} TweetSource;
+
 @interface TimelineViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+-(id) initWithMode:(TweetSource)source;
 
 @end

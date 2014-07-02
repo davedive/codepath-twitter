@@ -14,34 +14,12 @@
 #import "Tweet.h"
 #import "UserInfo.h"
 #import "LoginViewController.h"
-
-@interface UIView (SuperView)
-
-- (UIView *)findSuperViewWithClass:(Class)superViewClass;
-
-@end
-
-
-@implementation UIView (SuperView)
-
-- (UIView *)findSuperViewWithClass:(Class)superViewClass
-{
-    
-    UIView *superView = self.superview;
-    UIView *foundSuperView = nil;
-    
-    while (nil != superView && nil == foundSuperView) {
-        if ([superView isKindOfClass:superViewClass]) {
-            foundSuperView = superView;
-        } else {
-            superView = superView.superview;
-        }
-    }
-    return foundSuperView;
-}
-@end
+#import "UIView+SuperView.h"
+#import "ProfileViewController.h"
 
 @interface TimelineViewController ()
+
+@property (nonatomic) TweetSource source;
 
 @property (nonatomic, strong) NSArray* tweets;
 @property (strong, nonatomic) TweetCell* stubCell;
@@ -58,6 +36,15 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+    }
+    return self;
+}
+
+-(id) initWithMode:(TweetSource)source;
+{
+    self = [super initWithNibName:@"TimelineViewController" bundle:nil];
+    if (self) {
+        self.source = source;
     }
     return self;
 }
@@ -99,15 +86,34 @@
 
 - (void)loadEntries
 {
-    [[TwitterClient getInstance] getTimelineWithSuccess:^(AFHTTPRequestOperation *operation, id response) {
-        self.tweets = [Tweet tweetsWithArray:response];
-        NSLog(@"%@", response);
-        [self.timelineTableView reloadData];
-        [self.refresh endRefreshing];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"failed to get timeline!");
-        [self.refresh endRefreshing];
-    }];
+    switch (self.source) {
+        case homeMode: {
+            [[TwitterClient getInstance] getTimelineWithSuccess:^(AFHTTPRequestOperation *operation, id response) {
+                self.tweets = [Tweet tweetsWithArray:response];
+                NSLog(@"Home: %@", response);
+                [self.timelineTableView reloadData];
+                [self.refresh endRefreshing];
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"failed to get home timeline!");
+                [self.refresh endRefreshing];
+            }];
+        }
+            break;
+        case mentionsMode: {
+            [[TwitterClient getInstance] getMentionsWithSuccess:^(AFHTTPRequestOperation *operation, id response) {
+                self.tweets = [Tweet tweetsWithArray:response];
+                NSLog(@"Mentions: %@", response);
+                [self.timelineTableView reloadData];
+                [self.refresh endRefreshing];
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"failed to get mentions timeline!");
+                [self.refresh endRefreshing];
+            }];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 
@@ -136,6 +142,13 @@
     [cell.replyButton addTarget:self action:@selector(replyButtonClicked:) forControlEvents:UIControlEventTouchDown];
     [cell.retweetButton addTarget:self action:@selector(retweetButtonClicked:) forControlEvents:UIControlEventTouchDown];
     [cell.favoriteButton addTarget:self action:@selector(favoriteButtonClicked:) forControlEvents:UIControlEventTouchDown];
+    
+    cell.profileImageView.userInteractionEnabled = YES;
+    cell.profileImageView.tag = indexPath.row;
+    
+    UITapGestureRecognizer *tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTap:)];
+    tapped.numberOfTapsRequired = 1;
+    [cell.profileImageView addGestureRecognizer:tapped];
     
     return cell;
 }
@@ -189,6 +202,18 @@
         [self loadEntries];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failed to favorite");
+    }];
+}
+
+-(void) imageTap:(id)sender
+{
+    UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
+    [[TwitterClient getInstance] getUserWithSuccess:((Tweet*)self.tweets[gesture.view.tag]).username success:^(AFHTTPRequestOperation *operation, id response) {
+        NSLog(@"%@", response);
+        UserInfo *info = [MTLJSONAdapter modelOfClass:UserInfo.class fromJSONDictionary:response error:nil];
+        [self.navigationController pushViewController:[[ProfileViewController alloc] initWithUser:info] animated:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"failed to get user!");
     }];
 }
 
