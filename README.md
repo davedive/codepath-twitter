@@ -4,7 +4,9 @@ Twitter Client
 This is an iOS 7 demo app displaying tweets using the Twitter API. It is created as part of [CodePath](http://codepath.com/) course work. (July 1, 2014)
 
 Time spent:
+
 Project 3 -> approximately 12 hours
+
 Project 4 -> 7.5 hours
 
 Features
@@ -30,4 +32,4 @@ Features
 
 Walkthrough
 ------------
-![Video Walkthrough](twitter-walkthrough-7.gif)
+![Video Walkthrough](twitter-walkthrough-8.gif)
